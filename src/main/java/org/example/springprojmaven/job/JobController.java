@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 public class JobController {
 
-	private final List<Job> jobs = new ArrayList<>();
+	private List<Job> jobs = new ArrayList<>();
 
 	@GetMapping("/jobs")
 	public List<Job> findAll(){
