@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class JobServiceImpl implements JobService {
 
-	private List<Job> jobs = new ArrayList<>();
+	private final List<Job> jobs = new ArrayList<>();
 	private static int idCounter = 0;
 	@Override
 	public List<Job> findAll() {
@@ -37,6 +37,22 @@ public class JobServiceImpl implements JobService {
 		for(Job job : jobs){
 			if(job.getId()==id) {
 				jobs.remove(job);
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public boolean updateJob(int id, Job job) {
+		for(Job jo:jobs){
+			if(jo.getId()==id)
+			{
+				jo.setDescription(job.getDescription());
+				jo.setLocation(job.getLocation());
+				jo.setTitle(job.getTitle());
+				jo.setMaxSalary(job.getMaxSalary());
+				jo.setMinSalary(job.getMinSalary());
 				return true;
 			}
 		}
