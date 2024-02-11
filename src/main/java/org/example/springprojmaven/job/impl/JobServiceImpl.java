@@ -22,4 +22,24 @@ public class JobServiceImpl implements JobService {
 		job.setId(idCounter++);
 		jobs.add(job);
 	}
+
+	@Override
+	public Job getJobById(int id) {
+		for(Job job : jobs){
+			if(job.getId() == id)
+				return job;
+		}
+		return null;
+	}
+
+	@Override
+	public boolean deleteJob(int id) {
+		for(Job job : jobs){
+			if(job.getId()==id) {
+				jobs.remove(job);
+				return true;
+			}
+		}
+		return false;
+	}
 }
