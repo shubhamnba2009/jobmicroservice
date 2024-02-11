@@ -1,12 +1,12 @@
 package org.example.springprojmaven.job;
 
 public class Job {
-	public int id;
-	public String title;
-	public String description;
-	public String maxSalary;
-	public String minSalary;
-	public String location;
+	private int id;
+	private String title;
+	private String description;
+	private String maxSalary;
+	private String minSalary;
+	private String location;
 
 	public int getId() {
 		return id;
